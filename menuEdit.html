@@ -1,0 +1,28 @@
+<?php
+    $menu = $_POST['menu'];
+    $storeName = $_POST['storeName'];
+    $price = $_POST['price'];
+    $menuType = $_POST['menuType'];
+?>
+
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>editUser</title>
+  </head>
+  <body>
+    <h1>edit User</h1>
+    <form class="" action="menuEdit.php" method="POST">
+        <!-- value 값에 php로 받아온 값 넣어줌 -->
+        메뉴:<input type="text" name="menu" value="<?php echo $menu ?>" required><br><br>
+        가게:<input type="text" name="storeName" value="<?php echo $storeName ?>" required><br><br>
+        가격:<input type="text" name="price" value="<?php echo $price ?>" required><br><br>
+        타입:<input type="text" name="menuType" value="<?php echo $menuType ?>" required><br><br>
+        <!-- 이전 값도 넣어서 조건절에 넣을 수 있도록 함 -->
+        <input type="hidden" name="pre_menu" value="<?php echo $menu ?>">
+        <input type="hidden" name="pre_storeName" value="<?php echo $storeName ?>">
+      <input type="submit" value="edit">
+    </form>
+  </body>
+</html>

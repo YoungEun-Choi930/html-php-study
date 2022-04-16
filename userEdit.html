@@ -1,0 +1,22 @@
+<?php
+    $userName = $_POST['user_userName'];
+    $userID = $_POST['user_userID'];
+?>
+
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>editUser</title>
+  </head>
+  <body>
+    <h1>edit User</h1>
+    <form class="" action="userEdit.php" method="POST">
+        이름:<input type="text" name="user_userName" value="<?php echo $userName ?>" required><br><br>
+        ID:<input type="text" name="user_userID" value="<?php echo $userID ?>" required><br><br>
+        <input type="hidden" name="pre_userID" value="<?php echo $userID ?>">
+        
+      <input type="submit" value="edit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<?php
+    $userID = $_POST['userID'];
+    $storeName = $_POST['storeName'];
+    $review = $_POST['review'];
+    $menu = $_POST['menu'];
+    $starRating = $_POST['starRating'];
+    $date = $_POST['date'];
+    // 리뷰에서 유저아이디랑 스토어네임은 수정 불가.
+    echo "userID:".$userID."<br><br>"
+    echo "storeName:".$storeName."<br><br>"
+?>
+
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>edit</title>
+  </head>
+  <body>
+    <h1>edit Store</h1>
+    <form class="" action="reviewEdit.php" method="POST">
+    
+    리뷰<br><textarea name="review" cols = "30" rows = "5" required>"<?php echo $review ?>"</textarea><br><br>
+    메뉴:<input type="text" name="menu" value="<?php echo $menu ?>"required><br><br>
+    별점:<input type="range" min = "0" max = "5" name="starRating" value="<?php echo $starRating ?>"required><br><br>
+    <input type="hidden" name="pre_userID" value="<?php echo $userID ?>">
+    <input type="hidden" name="pre_date" value="<?php echo $date ?>">
+    <input type="hidden" name="pre_storeName" value="<?php echo $storeName ?>">
+      <input type="submit" value="edit">
+    </form>
+  </body>
+</html>
